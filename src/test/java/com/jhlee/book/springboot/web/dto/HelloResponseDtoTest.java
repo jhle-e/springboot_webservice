@@ -1,4 +1,4 @@
-package com.easyh.book.springboot.web.dto;
+package com.jhlee.book.springboot.web.dto;
 
 import org.junit.Test;
 

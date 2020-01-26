@@ -1,4 +1,4 @@
-package com.easyh.book.springboot;
+package com.jhlee.book.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
