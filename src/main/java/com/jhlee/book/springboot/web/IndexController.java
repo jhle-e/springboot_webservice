@@ -1,5 +1,6 @@
 package com.jhlee.book.springboot.web;
 
+import com.jhlee.book.springboot.config.auth.LoginUser;
 import com.jhlee.book.springboot.config.auth.dto.SessionUser;
 import com.jhlee.book.springboot.service.PostsService;
 import com.jhlee.book.springboot.web.dto.PostsResponseDto;
@@ -20,9 +21,8 @@ public class IndexController {
 
     //머스테치 스타터로 인해 문자열 반환시 prefix와 suffix가 자동 지정 (src/main..), (.mustache)
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
-        SessionUser user = (SessionUser)httpSession.getAttribute("user");
         if(user != null) {
             model.addAttribute("userName", user.getName());
         }
